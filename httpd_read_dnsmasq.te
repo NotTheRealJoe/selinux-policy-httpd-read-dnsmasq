@@ -1,0 +1,7 @@
+policy_module(httpd_read_dnsmasq, 1.0)
+require {
+	type httpd_t;
+	type dnsmasq_lease_t;
+}
+allow httpd_t dnsmasq_lease_t:file open;
+allow httpd_t dnsmasq_lease_t:file { getattr read };
